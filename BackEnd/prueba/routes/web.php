@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('articles/{nombre?}',function($nombre='no se coloco nada'){
+	echo 'El nombre que has colocado es '.$nombre;
+});
+
+Route::group(['prefix' => 'grupoderutas'], function(){
+	Route::get('articles/{algo?}', function($algo='Vacio'){
+		echo $algo;
+	});
+});
